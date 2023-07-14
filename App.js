@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import Bridge from '@rn-at/bridge';
+import MiniApi from '@rn-at/bridge';
 import { Header, Text, scaleSize } from '@rn-at/ui-kits';
 
 let App = props => {
@@ -8,7 +8,7 @@ let App = props => {
     <View>
       <Header
         onGoBack={() => {
-          Bridge.goBack();
+          MiniApi.goBack();
         }}
         iconCloseName="close-o"
         title="Mini App"
