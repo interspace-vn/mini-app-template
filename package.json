@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "bundle": "./scripts/bundle_android.sh && ./scripts/bundle_ios.sh",
+    "bundle": "ENV=development ./envscript.sh && ./scripts/bundle_android.sh && ./scripts/bundle_ios.sh",
+    "bundle:prod": "ENV=production ./envscript.sh && ./scripts/bundle_android.sh && ./scripts/bundle_ios.sh",
     "all": "./scripts/prepare.sh",
-    "start": "react-native start --reset-cache --port 8181",
+    "start": "ENV=development ./envscript.sh && react-native start --reset-cache --port 8181",
+    "start:prod": "ENV=production ./envscript.sh && react-native start --reset-cache --port 8181",
     "lint": "eslint ."
   },
   "dependencies": {

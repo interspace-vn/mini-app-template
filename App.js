@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import MiniApi from '@rn-at/bridge';
 import { Header, Text, scaleSize } from '@rn-at/ui-kits';
+const app = require('app.json');
 
 let App = props => {
   return (
@@ -14,6 +15,7 @@ let App = props => {
         title="Mini App"
       />
       <View style={styles.body}>
+        <Text>{`App Id: ${app?.appId}`}</Text>
         <Text>{`SessionId: ${props.sessionId}`}</Text>
         <Text>{`Signature: ${props.signature}`}</Text>
       </View>
